@@ -12,6 +12,7 @@ gem "rack-cors"
 
 group :development, :test do
   gem "rspec-rails", "~> 7.0"
+  gem "rswag"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false

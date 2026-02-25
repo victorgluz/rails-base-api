@@ -19,5 +19,21 @@ A API estará disponível em http://localhost:3000
 ## Como rodar os testes
 
 ```bash
+docker compose run --rm web bundle exec rspec
+```
+
+Com nome dos testes:
+
+```bash
 docker compose run --rm web bundle exec rspec --format documentation
+```
+
+## Documentação da API (Swagger)
+
+Com a API rodando, acesse http://localhost:3000/api-docs para ver a documentação interativa.
+
+Para regenerar o Swagger após alterar os endpoints:
+
+```bash
+docker compose run --rm web bundle exec rake rswag:specs:swaggerize
 ```

@@ -1,0 +1,92 @@
+---
+openapi: 3.0.1
+info:
+  title: Ruby API
+  version: v1
+  description: API com autenticação JWT
+paths:
+  "/auth/register":
+    post:
+      summary: Registra novo usuário
+      tags:
+      - Auth
+      parameters: []
+      responses:
+        '201':
+          description: usuário criado
+        '422':
+          description: dados inválidos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      example: user@example.com
+                    password:
+                      type: string
+                      example: senha123
+                    password_confirmation:
+                      type: string
+                      example: senha123
+                  required:
+                  - email
+                  - password
+                  - password_confirmation
+  "/auth/login":
+    post:
+      summary: Autentica usuário
+      tags:
+      - Auth
+      parameters: []
+      responses:
+        '200':
+          description: login realizado
+        '401':
+          description: credenciais inválidas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: user@example.com
+                password:
+                  type: string
+                  example: senha123
+              required:
+              - email
+              - password
+  "/auth/me":
+    get:
+      summary: Retorna dados do usuário autenticado
+      tags:
+      - Auth
+      security:
+      - Bearer: {}
+      parameters:
+      - name: Authorization
+        in: header
+        description: Bearer token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: dados do usuário
+        '401':
+          description: não autenticado
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+servers:
+- url: http://localhost:3000
