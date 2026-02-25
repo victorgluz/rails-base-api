@@ -28,12 +28,6 @@ Com nome dos testes:
 docker compose run --rm web bundle exec rspec --format documentation
 ```
 
-## Documentação da API (Swagger)
+## Documentação da API
 
-Com a API rodando, acesse http://localhost:3000/api-docs para ver a documentação interativa.
-
-Para regenerar o Swagger após alterar os endpoints:
-
-```bash
-docker compose run --rm web bundle exec rake rswag:specs:swaggerize
-```
+http://localhost:3000/api-docs
