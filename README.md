@@ -31,3 +31,15 @@ docker compose run --rm web bundle exec rspec --format documentation
 ## Documentação da API
 
 http://localhost:3000/api-docs
+
+
+## Comandos Importantes
+Bundle Install: 
+```bash
+docker compose run --rm web bundle install
+```
+
+Apagar containers do projeto: 
+```bash
+docker compose down --rmi all -v
+```
