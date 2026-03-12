@@ -12,7 +12,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 group :development, :test do
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "~> 8.0"
   gem "rswag"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
