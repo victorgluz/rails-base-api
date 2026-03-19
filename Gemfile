@@ -5,7 +5,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "redis", ">= 4.0.1"
 gem "sidekiq", ">= 7.0"
-gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.22"
 gem "jwt"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
